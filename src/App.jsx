@@ -1,5 +1,5 @@
-import React from 'react';
 import Layout from "./layout/Layout";
+import Dashboard from "./components/Dashboard";
 import EntryData from "./components/EntryData";
 import {
   createBrowserRouter,
@@ -13,16 +13,16 @@ const router = createBrowserRouter([
     element: <Typography variant="body1" color="initial">Page not found</Typography>,
   },
   {
-    path: "/home",
+    path: "/admin",
     element: <Layout />,
     children: [
       {
         index: true,
-        path: "/home/start",
-        element: <Typography variant="body1" color="initial">Homepage</Typography>,
+        path: "/admin/dashboard",
+        element: <Dashboard />
       },
       {
-        path: "/home/entries",
+        path: "/admin/entries",
         element: <EntryData />, 
       }
     ]
